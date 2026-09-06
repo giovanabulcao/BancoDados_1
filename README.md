@@ -26,12 +26,9 @@ Modelagem conceitual (DER) para um sistema de cálculo de locação de veículos
 - Validação de entradas inválidas (dias, valor da diária, idade ou quilometragem fora dos limites aceitáveis)
 
 Conceitos trabalhados:
-1. Identificação de entidades a partir de um problema computacional (Locação, Veículo, Motorista)
-2. Atributos simples vs. atributos derivados/calculados
-3. Modelagem de atributo opcional (seguro) como atributo booleano ou relacionamento opcional
+1. Identificação de entidades a partir de um problema (Locação, Veículo, Motorista)
 4. Regras de negócio como restrições de domínio, não como entidades
 5. Faixas de desconto como regra aplicada sobre atributo, não como entidade
-6. Validação de entradas como restrição de integridade dos atributos
 7. Cardinalidade entre Motorista, Veículo e Locação
 8. Separação entre modelagem de dados e lógica de cálculo/algoritmo
 
