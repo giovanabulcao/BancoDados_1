@@ -24,12 +24,5 @@ Modelagem conceitual (DER) para um sistema de cálculo de locação de veículos
 - Desconto progressivo sobre o valor das diárias conforme a duração da locação (0%, 5% ou 10%)
 - Taxa adicional para motoristas com menos de 21 anos (R$ 150,00)
 - Validação de entradas inválidas (dias, valor da diária, idade ou quilometragem fora dos limites aceitáveis)
-
-Conceitos trabalhados:
-1. Identificação de entidades a partir de um problema (Locação, Veículo, Motorista)
-4. Regras de negócio como restrições de domínio, não como entidades
-5. Faixas de desconto como regra aplicada sobre atributo, não como entidade
-7. Cardinalidade entre Motorista, Veículo e Locação
-8. Separação entre modelagem de dados e lógica de cálculo/algoritmo
-
+  
 Link da atividade (Diagrama feito no BR Modelo): https://app.brmodeloweb.com/publicview/6a99736df351603fa48c0798
