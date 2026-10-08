@@ -178,4 +178,4 @@ Parte V
 
 Existe relação entre os problemas de integridade estudados e os mecanismos encontrados?
 
-- Sim, existe uma relação direta, cada tipo de integridade é um conjunto de regras (o que precisa ser garantido), e cada mecanismo (`PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL`, `UNIQUE`, `CHECK`, `DEFAULT`) onde cada mecanismo implementa um tipo de integridade
+- Sim, existe uma relação direta, cada tipo de integridade é um conjunto de regras (o que precisa ser garantido), onde cada mecanismo (`PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL`, `UNIQUE`, `CHECK`, `DEFAULT`) implementa um tipo de integridade
