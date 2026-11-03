@@ -1,3 +1,6 @@
-## Banco de Dados 1
+## Ciência da Computação - Universidade Estadual de Maringá (UEM)
 
-## 2º BIMESTRE
+**Disciplina: Banco de Dados 1**
+**Professor: João Choma**
+
+Repositório contendo as atividades práticas da disciplina. Separado em dois arquivos.md, um para as atividades do primeiro bimestre e outro para as atividades do segundo bimestre.
