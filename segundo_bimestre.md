@@ -5,7 +5,8 @@ Link da atividade no Supabase -> https://irpuzumfxujmbubizmra.supabase.co
 ### ATIVIDADE 4 (PARA ENTREGA): 
 Link do Supabase -> https://nyqdvbkvsrjicljtqhyp.supabase.co
 As perguntas dos exercícios 1 a 4, são respondidas em comentário no código.
-EX 5:
+
+Exercicio 5:
 
 | Tentativa | Inserção aceita? | Restrição envolvida | Explique o motivo |
 | --- | --- | --- | --- |
