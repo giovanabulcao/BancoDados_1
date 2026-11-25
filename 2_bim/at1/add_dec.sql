@@ -1,0 +1,2 @@
+ALTER TABLE produto
+ADD COLUMN descricao VARCHAR(300);
