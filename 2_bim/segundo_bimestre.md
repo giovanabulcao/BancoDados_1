@@ -1,8 +1,8 @@
 ## 2º BIMESTRE
-### Atividade 1: Utilizando conceitos de INSERT e SELECT. 
+### Atividade 1 (Insert e Select): Utilizando conceitos de INSERT e SELECT. 
 Link da atividade no Supabase -> https://irpuzumfxujmbubizmra.supabase.co
 
-### ATIVIDADE 4 (PARA ENTREGA): 
+### ATIVIDADE 4: 
 Link do Supabase -> https://nyqdvbkvsrjicljtqhyp.supabase.co
 As perguntas dos exercícios 1 a 4, são respondidas em comentário no código.
 
