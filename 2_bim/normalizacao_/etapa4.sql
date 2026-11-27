@@ -1,4 +1,4 @@
--- NORMALIZAÇÃO — PARTE 4: 
+-- PARTE 4: 
 
 /* EXERCÍCIO 9 
 
@@ -14,22 +14,22 @@ Separação: CURSO(id_curso PK, nome_curso, coordenador) e
 ALUNO(id_aluno PK, nome_aluno, id_curso FK).
 */
 
-CREATE TABLE IF NOT EXISTS norm_ex09_curso (
+CREATE TABLE curso (
     id_curso BIGINT PRIMARY KEY,
     nome_curso VARCHAR(120) NOT NULL,
     coordenador VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS norm_ex09_aluno (
+CREATE TABLE aluno (
     id_aluno BIGINT PRIMARY KEY,
     nome_aluno VARCHAR(100) NOT NULL,
     id_curso BIGINT NOT NULL,
-    CONSTRAINT fk_norm_ex09_aluno_curso
-        FOREIGN KEY (id_curso) REFERENCES norm_ex09_curso(id_curso)
+    CONSTRAINT fk_aluno_curso
+        FOREIGN KEY (id_curso) REFERENCES curso(id_curso)
 );
 
 -- j) Cadastre os três cursos apresentados.
-INSERT INTO norm_ex09_curso (id_curso, nome_curso, coordenador)
+INSERT INTO curso (id_curso, nome_curso, coordenador)
 VALUES
     (10, 'Sistemas de Informação', 'Carlos'),
     (20, 'Ciência da Computação', 'Fernanda'),
@@ -37,7 +37,7 @@ VALUES
 ON CONFLICT (id_curso) DO NOTHING;
 
 -- k) Cadastre cinco alunos distribuídos entre os cursos.
-INSERT INTO norm_ex09_aluno (id_aluno, nome_aluno, id_curso)
+INSERT INTO aluno (id_aluno, nome_aluno, id_curso)
 VALUES
     (1, 'Ana', 10),
     (2, 'Bruno', 10),
@@ -47,13 +47,13 @@ VALUES
 ON CONFLICT (id_aluno) DO NOTHING;
 
 -- l) Altere o coordenador do curso de Sistemas de Informação.
-UPDATE norm_ex09_curso
+UPDATE curso
 SET coordenador = 'Marcos'
 WHERE id_curso = 10;
 
 -- m) Consulte o curso alterado.
 SELECT *
-FROM norm_ex09_curso
+FROM curso
 WHERE id_curso = 10;
 
 -- n) Não é necessário atualizar os alunos porque os dados do coordenador
@@ -73,28 +73,28 @@ do gerente/nome do departamento; perder dados do departamento ao excluir o
 último funcionário.
 */
 
-CREATE TABLE IF NOT EXISTS norm_ex10_departamento (
+CREATE TABLE departamento (
     id_departamento BIGINT PRIMARY KEY,
     nome_departamento VARCHAR(100) NOT NULL UNIQUE,
     gerente_departamento VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS norm_ex10_funcionario (
+CREATE TABLE funcionario (
     id_funcionario BIGINT PRIMARY KEY,
     nome_funcionario VARCHAR(100) NOT NULL,
     salario NUMERIC(10,2) NOT NULL CHECK (salario >= 0),
     id_departamento BIGINT NOT NULL,
-    CONSTRAINT fk_norm_ex10_funcionario_departamento
+    CONSTRAINT fk_funcionario_departamento
         FOREIGN KEY (id_departamento)
-        REFERENCES norm_ex10_departamento(id_departamento)
+        REFERENCES departamento(id_departamento)
 );
 
 -- i) e j) Cadastre departamentos e funcionários.
-INSERT INTO norm_ex10_departamento (id_departamento, nome_departamento, gerente_departamento)
+INSERT INTO departamento (id_departamento, nome_departamento, gerente_departamento)
 VALUES (10, 'TI', 'Carlos'), (20, 'Financeiro', 'Fernanda')
 ON CONFLICT (id_departamento) DO NOTHING;
 
-INSERT INTO norm_ex10_funcionario (id_funcionario, nome_funcionario, salario, id_departamento)
+INSERT INTO funcionario (id_funcionario, nome_funcionario, salario, id_departamento)
 VALUES
     (1, 'Ana', 3500.00, 10),
     (2, 'Bruno', 4200.00, 10),
@@ -104,28 +104,30 @@ VALUES
 ON CONFLICT (id_funcionario) DO NOTHING;
 
 -- k) Aumente em 10% o salário dos funcionários do departamento de TI.
-UPDATE norm_ex10_funcionario
+UPDATE funcionario
 SET salario = salario * 1.10
 WHERE id_departamento = (
     SELECT id_departamento
-    FROM norm_ex10_departamento
+    FROM departamento
     WHERE nome_departamento = 'TI'
 );
 
 -- l) Altere o gerente do departamento Financeiro.
-UPDATE norm_ex10_departamento
+UPDATE departamento
 SET gerente_departamento = 'Mariana'
 WHERE nome_departamento = 'Financeiro';
 
 -- m) Consulte os dados dos departamentos.
-SELECT * FROM norm_ex10_departamento ORDER BY id_departamento;
+SELECT * 
+FROM departamento
+ ORDER BY id_departamento;
 
 -- n) Consulte os funcionários que pertencem ao departamento de TI.
 SELECT *
-FROM norm_ex10_funcionario
+FROM funcionario
 WHERE id_departamento = (
     SELECT id_departamento
-    FROM norm_ex10_departamento
+    FROM departamento
     WHERE nome_departamento = 'TI'
 )
 ORDER BY id_funcionario;

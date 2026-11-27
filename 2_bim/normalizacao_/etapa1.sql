@@ -1,4 +1,4 @@
--- NORMALIZAÇÃO — PARTE 1: 
+-- PARTE 1: 
 -- os exercicios teoricos são respondiddos em comentário.
 
 /* 1 — ALUNO_CURSO
@@ -7,7 +7,7 @@ a) Informações repetidas:
 - nome_curso e coordenador aparecem novamente para cada aluno do mesmo curso.
 - O nome e o coordenador pertencem à entidade *curso*, não a cada matrícula/aluno.
 
-b a d) Atualização: mudar o coordenador exige alterar várias linhas; se uma ficar sem
+b, c, d, e) Atualização: mudar o coordenador exige alterar várias linhas; se uma ficar sem
   atualização, haverá valores divergentes para o mesmo curso.
 - Exclusão: apagar o último aluno de um curso pode apagar também a única cópia
   do nome do curso e do coordenador.
@@ -35,7 +35,7 @@ Modelo proposto: DEPARTAMENTO(id_departamento PK, nome_departamento, gerente_dep
  e FUNCIONARIO(id_funcionario PK, nome_funcionario, salario, id_departamento FK).
 */
 
--- Implementação da estrutura proposta no exercício 2.
+
 CREATE TABLE IF NOT EXISTS norm_ex02_departamento (
     id_departamento BIGINT PRIMARY KEY,
     nome_departamento VARCHAR(100) NOT NULL,

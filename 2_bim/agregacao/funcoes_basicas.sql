@@ -1,4 +1,4 @@
--- AGREGAÇÃO — NÍVEL 1: 
+-- NÍVEL 1: 
 
 -- 1. Conte todos os produtos.
 SELECT COUNT(*) AS total_produtos

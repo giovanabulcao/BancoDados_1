@@ -1,4 +1,4 @@
--- AGREGAÇÃO — NÍVEL 2: GROUP BY
+-- NÍVEL 2: GROUP BY
 
 
 -- 8. Conte os produtos por categoria.

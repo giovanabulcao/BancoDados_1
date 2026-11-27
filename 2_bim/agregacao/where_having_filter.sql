@@ -1,4 +1,4 @@
--- AGREGAÇÃO — NÍVEL 3: WHERE, HAVING E FILTER
+-- NÍVEL 3: WHERE, HAVING E FILTER
 
 
 -- 13. Conte por categoria somente produtos com preço acima de R$ 100.

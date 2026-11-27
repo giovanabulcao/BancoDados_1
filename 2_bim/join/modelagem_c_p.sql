@@ -17,7 +17,7 @@ CREATE TABLE pedido (
         ON DELETE RESTRICT
 );
 
--- Cadastre três clientes.
+-- Cadastre três clientes
 INSERT INTO cliente (nome, email)
 VALUES
     ('Ana', 'ana.join@email.com'),
@@ -25,7 +25,7 @@ VALUES
     ('Carla', 'carla.join@email.com')
 ON CONFLICT (email) DO NOTHING;
 
--- Cadastre quatro pedidos. Carla ficará sem pedidos.
+-- Cadastre quatro pedidos
 INSERT INTO pedido (data_pedido, valor, id_cliente)
 SELECT dados.data_pedido, dados.valor, c.id_cliente
 FROM (VALUES

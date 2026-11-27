@@ -1,4 +1,4 @@
--- AGREGAÇÃO — NÍVEL 4: JOIN E AGREGAÇÃO
+-- NÍVEL 4: JOIN E AGREGAÇÃO
 
 
 -- 18. Conte produtos por categoria incluindo categorias vazias.
